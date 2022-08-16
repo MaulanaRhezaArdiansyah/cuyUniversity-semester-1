@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sesi - 5 - Tugas</title>
+</head>
+<style>
+    #root {
+        background-color: rgb(0, 0, 63);
+        color: white;
+        font-size: 2em;
+        text-align: center;
+        height: 100vh;
+    }
+
+</style>
+<body>
+    <div id="root">
+        <button onclick="onLogout()" id="logoutButton">Logout</button>
+        <h1 id="vvip">SELAMAT DATANG MEMBER VVIP</h1>
+        <h1 id="basic">SELAMAT DATANG MEMBER BASIC</h1>
+        <h1 id="admin">HAI, ADMIN!</h1>
+        <input type="text" placeholder="Username" id="usernameInput">
+        <input type="password" placeholder="Password" id="passwordInput">
+        <button onclick="onLogin()" id="loginButton">Login</button>
+        <button onclick="register()" id="registerButton">Register</button>
+
+    </div>
+
+    <script type="application/javascript">
+let usernameInput = document.getElementById("usernameInput");
+let passwordInput = document.getElementById("passwordInput");
+let loginButton = document.getElementById("loginButton");
+let logoutButton = document.getElementById("logoutButton");
+let registerButton = document.getElementById("registerButton");
+let admin = document.getElementById("admin");
+let vvip = document.getElementById("vvip");
+let basic = document.getElementById("basic");
+
+admin.style.display = "none";
+vvip.style.display = "none";
+basic.style.display = "none";
+logoutButton.style.display = "none";
+
+function onLogin() {
+    localStorage.setItem("username", usernameInput.value);
+    logoutButton.style.display = "block";
+    if(usernameInput.value == "admin" && passwordInput.value == "admin123") {
+        localStorage.setItem("role", "admin");
+        usernameInput.style.display = "none";
+        passwordInput.style.display = "none";
+        loginButton.style.display = "none";
+        registerButton.style.display = "none";
+        vvip.style.display = "none";
+        basic.style.display = "none";
+        admin.style.display = "block";
+        admin.style.color = "wheat";
+    } else if(usernameInput.value == "vvip" && passwordInput.value == "vvip123") {
+        localStorage.setItem("role", "vvip");
+        usernameInput.style.display = "none";
+        passwordInput.style.display = "none";
+        loginButton.style.display = "none";
+        registerButton.style.display = "none";
+        basic.style.display = "none";
+        admin.style.display = "none";
+        vvip.style.display = "block";
+        vvip.style.color = "gold"
+    } else {
+        localStorage.setItem("role", "basic");
+        usernameInput.style.display = "none";
+        passwordInput.style.display = "none";
+        loginButton.style.display = "none";
+        registerButton.style.display = "none";
+        admin.style.display = "none";
+        vvip.style.diplay = "none";
+        basic.style.display = "block";
+    }
+}
+
+if(localStorage.getItem("username")) {
+    usernameInput.style.display = "none";
+    passwordInput.style.display = "none";
+    loginButton.style.display = "none";
+    registerButton.style.display = "none";
+    logoutButton.style.display = "block";
+    if(localStorage.getItem("role") == "admin") {
+        basic.style.display = "none";
+        vvip.style.display = "none";
+        admin.style.display = "block";
+    } else if(localStorage.getItem("role") == "vvip") {
+        basic.style.display = "none";
+        admin.style.display = "none";
+        vvip.style.display = "block";
+    } else {
+        vvip.style.display = "none";
+        admin.style.display = "none";
+        basic.style.display = "block";
+    }
+}
+
+function onLogout() {
+    localStorage.clear();
+    location.reload();
+}
+
+    </script>
+</body>
+</html>

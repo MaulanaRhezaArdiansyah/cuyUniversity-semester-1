@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign In</title>
+    
+</head>
+<body>
+    <div class="container">
+        <!-- SIGN IN START -->
+        <div class="sign-in-container" id="signInContainer">
+            <h1 class="judul" id="titleSignIn">Sign In</h1>
+            <input type="text" placeholder="Username" class="input" id="signInUser">
+            <input type="password" placeholder="Password" class="input" id="signInPass">
+            <button onclick="signIn()" id="signInButton" class="sign-in">Login</button>
+            <p id="signInError" class="error">Username atau password salah.</p>
+            <p id="daftarYuk" class="yuk">Belum punya akun? Yuk <span onclick="daftar()">daftar disini.</span></p>
+        </div>
+        <!-- SIGN IN END -->
+
+        <!-- SIGN UP START -->
+        <div class="sign-up-container" id="signUpContainer">
+            <h1 class="judul" id="titleSignUp">Sign Up</h1>
+            <input type="text" placeholder="Username" class="input" id="signUpUser">
+            <input type="password" placeholder="Password" class="input" id="signUpPass">
+            <button onclick="signUp()" id="signUpButton" class="sign-up">Daftar</button>
+            <p id="signUpDone">Selamat, Anda sudah terdaftar. <span onclick="masuk()">Masuk</span></p>
+            <p id="signUpError" class="error">Mohon ulangi lagi.</p>
+        </div>
+        <!-- SIGN UP END -->
+
+        <!-- CONTENT SAAT BERHASIL LOGIN -->
+        <h1 id="admin"></h1>
+        <h1 id="user"></h1>
+        <button onclick="logout()" id="logoutButton" class="logout">Logout</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

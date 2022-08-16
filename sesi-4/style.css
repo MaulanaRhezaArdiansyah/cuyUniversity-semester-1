@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cetekan-ruangan {
+    border: 5px solid #3333ff;
+    padding: 10px;
+    border-radius: 30%;
+}
+
+h2, h3 {
+    color: white;
+}
+
+.container1 {
+    border-bottom: 10px solid #3333ff;
+}
+
+.container2 {
+    border-bottom: 10px solid #3333ff;
+}
+
+.container3 {
+    border-bottom: 10px solid #3333ff;
+}
+
+footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}

@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <title>Sesi - 5</title>
+  </head>
+  <style>
+    #root {
+      background-color: tomato;
+      color: white;
+      font-size: 2em;
+      text-align: center;
+      height: 100vh;
+    }
+  </style>
+  <body>
+    <!-- INI KONTEN KITA -->
+    <div id="root">
+      <input type="text" placeholder="username" id="usernameInput" />
+      <input type="password" placeholder="password" id="passwordInput" />
+      <button onclick="onLogin()" id="loginButton">LOGIN</button>
+      <button onclick="onLogout()" id="logoutButton">LOGOUT</button>
+      <br />
+      <h2 id="admin">LOGIN SEBAGAI ADMIN</h2>
+      <h2 id="basic">LOGIN SEBAGAI BASIC</h2>
+      <h2 id="shooltan">LOGIN SEBAGAI SHOOLTAN</h2>
+      <h2 id="premium">LOGIN SEBAGAI PREMIUM</h2>
+      <h2 id="numpang">CUMA NUMPANG LOGIN</h2>
+    </div>
+
+    <script type="application/javascript">
+      let usernameInput = document.getElementById("usernameInput");
+      let passwordInput = document.getElementById("passwordInput");
+      let loginButton = document.getElementById("loginButton");
+      let logoutButton = document.getElementById("logoutButton");
+      let admin = document.getElementById("admin");
+      let basic = document.getElementById("basic");
+      let shooltan = document.getElementById("shooltan");
+      let premium = document.getElementById("premium");
+      let numpang = document.getElementById("numpang");
+
+
+      admin.style.display = "none";
+      basic.style.display = "none";
+      shooltan.style.display = "none";
+      premium.style.display = "none";
+      numpang.style.display = "none";
+
+      logoutButton.style.display = "none";
+      
+      function onLogin() {
+          localStorage.setItem("username", usernameInput.value);
+          logoutButton.style.display = "block";
+          
+        if (usernameInput.value == "admin" && passwordInput.value == "admin123") {
+          usernameInput.style.display = "none";
+          passwordInput.style.display = "none";
+          loginButton.style.display = "none";
+          localStorage.setItem("role", "admin");
+          admin.style.display = "block";
+          basic.style.display = "none";
+          shooltan.style.display = "none";
+          premium.style.display = "none";
+          numpang.style.display = "none";
+        }
+        if(usernameInput.value == "shooltan" && passwordInput.value == "shooltan123") {
+          usernameInput.style.display = "none";
+          passwordInput.style.display = "none";
+          loginButton.style.display = "none";
+          localStorage.setItem("role", "shooltan");
+          admin.style.display = "none";
+          basic.style.display = "none";
+          shooltan.style.display = "block";
+          premium.style.display = "none";
+          numpang.style.display = "none";
+        } 
+        if(usernameInput.value == "premium" && passwordInput.value == "premium123") {
+          usernameInput.style.display = "none";
+          passwordInput.style.display = "none";
+          loginButton.style.display = "none";
+          localStorage.setItem("role", "premium");
+          admin.style.display = "none";
+          basic.style.display = "none";
+          shooltan.style.display = "none";
+          premium.style.display = "block";
+          numpang.style.display = "none";
+        } 
+        if(usernameInput.value == "basic" && passwordInput.value == "basic") {
+          usernameInput.style.display = "none";
+          passwordInput.style.display = "none";
+          loginButton.style.display = "none";
+          localStorage.setItem("role", "basic");
+          basic.style.display = "block";
+          admin.style.display = "none";
+          shooltan.style.display = "none";
+          premium.style.display = "none";
+          numpang.style.display = "none";
+        } else {
+          usernameInput.style.display = "none";
+          passwordInput.style.display = "none";
+          loginButton.style.display = "none";
+          localStorage.setItem("role", "numpang");
+          basic.style.display = "none";
+          admin.style.display = "none";
+          shooltan.style.display = "none";
+          premium.style.display = "none";
+          numpang.style.display = "block";
+        }
+      }
+
+      if(localStorage.getItem("username")) {
+        usernameInput.style.display = "none";
+        passwordInput.style.display = "none";
+        loginButton.style.display = "none";
+        logoutButton.style.display = "block";
+
+        if(localStorage.getItem("role") == "admin") {
+            admin.style.display = "block";
+            basic.style.display = "none";
+            shooltan.style.display = "none";
+            premium.style.display = "none";
+            numpang.style.display = "none";
+        } 
+        if(localStorage.getItem("role") == "shooltan") {
+            admin.style.display = "none";
+            basic.style.display = "none";
+            shooltan.style.display = "block";
+            premium.style.display = "none";
+            numpang.style.display = "none";
+        } 
+        if(localStorage.getItem("role") == "premium") {
+            admin.style.display = "none";
+            basic.style.display = "none";
+            shooltan.style.display = "none";
+            premium.style.display = "block";
+            numpang.style.display = "none";
+        } 
+        if(localStorage.getItem("role") == "basic") {
+            admin.style.display = "none";
+            basic.style.display = "block";
+            shooltan.style.display = "none";
+            premium.style.display = "none";
+            numpang.style.display = "none";
+        } else {
+            admin.style.display = "none";
+            basic.style.display = "none";
+            shooltan.style.display = "none";
+            premium.style.display = "none";
+            numpang.style.display = "block";
+        }
+      }
+
+      function onLogout() {
+        localStorage.clear();
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+body {
+    background-color: #d5d5d5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-container,
+.sign-up-container {
+    display: flex;
+    /* width: 40%; */
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+    background-color: white;
+    padding: 0 45px 20px 45px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 39%);
+}
+
+.judul {
+    text-align: center;
+}
+
+.input {
+    border: 1px solid #d7d7d7;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.sign-in,
+.sign-up {
+    padding: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.sign-in:hover,
+.sign-up:hover {
+    background-color: rgb(29, 29, 29);
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.error {
+    display: block;
+    color: red;
+}
+
+/* .yuk {
+    margin-top: -10px;
+} */
+
+.logout {
+    padding: 10px;
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.logout:hover {
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+span {
+    color: rgb(55, 55, 255);
+    cursor: pointer;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+    background-color: white;
+    padding: 100px 100px 100px 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 39%);
+}

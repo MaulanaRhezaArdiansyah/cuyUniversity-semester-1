@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<style>
+    #container {
+        background-color: rgb(0, 0, 63);
+        color: white;
+        font-size: 2em;
+        text-align: center;
+        height: 100vh;
+    }
+</style>
+<body>
+    <div id="container">
+       <h3 id="title">Halaman Register</h3>
+       <input type="text" placeholder="Masukkan Username Kamu" id="usernameRegist">
+       <br>
+       <input type="password" placeholder="Ketik Password" id="passwordRegist">
+       <br>
+       <button onclick="onRegister()" id="registButton">Register</button>
+       <h2 id="selamat">Selamat, Kamu sudah terdaftar!</h2>
+       <button onclick="onLogin2()" id="loginButton2">Login</button>
+       <h6>
+        <a href="index.html">Masuk</a>
+       </h6>
+    </div>
+
+    <script type="application/javascript">
+        let title = document.getElementById("title");
+        let usernameRegist = document.getElementById("usernameRegist");
+        let passwordRegist = document.getElementById("passwordRegist");
+        let registButton = document.getElementById("registButton");
+        let loginButton2 = document.getElementById("loginButton2");
+
+        selamat.style.display = "none";
+        loginButton2.style.display = "none";
+
+        function onRegister() {
+
+        }
+    </script>
+</body>
+</html>
